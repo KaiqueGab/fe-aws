@@ -19,19 +19,13 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install PNPM
-        id: install-pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
       - name: Install Dependencies
         id: install-dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Build
         id: build
-        run: pnpm run build
+        run: npm run build
 
       - name: Configure AWS Credentials
         id: configure-aws-credentials
