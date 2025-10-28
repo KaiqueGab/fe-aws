@@ -9,7 +9,7 @@ function App() {
     const fetchUsers = async () => {
       try {
         // A URL completa da sua API backend
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/getUsers`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/users`);
         if (!response.ok) {
           throw new Error(`Erro na rede: ${response.statusText}`);
         }
