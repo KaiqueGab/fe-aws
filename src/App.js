@@ -9,7 +9,7 @@ function App() {
     const fetchUsers = async () => {
       try {
         // A URL completa da sua API backend
-        const response = await fetch('http://localhost:3001/getUsers');
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/getUsers`);
         if (!response.ok) {
           throw new Error(`Erro na rede: ${response.statusText}`);
         }
@@ -29,12 +29,12 @@ function App() {
     <div style={{ fontFamily: 'Arial, sans-serif', margin: '40px', textAlign: 'center' }}>
       <h1>Lista de Usuários (com Drizzle ORM)</h1>
       <p>Dados buscados de um banco PostgreSQL no AWS RDS.</p>
-      <div style={{ 
-        display: 'inline-block', 
-        border: '1px solid #ccc', 
-        borderRadius: '8px', 
-        padding: '20px', 
-        marginTop: '20px' 
+      <div style={{
+        display: 'inline-block',
+        border: '1px solid #ccc',
+        borderRadius: '8px',
+        padding: '20px',
+        marginTop: '20px'
       }}>
         {loading && <p>Carregando usuários...</p>}
         {error && <p style={{ color: 'red' }}>Erro: {error}</p>}
